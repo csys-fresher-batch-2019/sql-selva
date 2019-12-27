@@ -131,4 +131,4 @@ select * from book_stock;
 
 select book_name,
 (select quantity from book_stock where book_id = b.book_id)- (select sum(quantity) from order_items where book_id = b.book_id) as stack_in_hand
-from books b;
+from books b; 
