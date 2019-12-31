@@ -73,7 +73,7 @@
             values(1012,0,1000,1500,0,1000);
 
 ```
-### Salary Calculation
+### Feature IV: Salary Calculation
 
 ```sql 
 
