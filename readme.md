@@ -26,12 +26,65 @@
       insert into employee(emp_id,emp_name,designation,login_time,leaves_taken,performance_grade)
       values(1012,'Vani','Project Manger',systimestamp,1,3);
 
-      insert into employee(emp_id,emp_name,designation,login_time,leaves_taken,performance_grade)
-      values(1023,'Thamos','Team Leader',systimestamp,2,3);
- 
-      insert into employee(emp_id,emp_name,designation,login_time,leaves_taken,performance_grade)
-       values(1112,'Raji','Technical consultant',systimestamp,0,1);
-
 ```
 
+### Feature II: Credit Details
+
+```sql
+
+            create table credits(
+            emp_id number not null,
+            base_pay number not null,
+            allowance number,
+            balance_loan_amount number,
+            salary_increment number,
+            constraint emp_id_fk foreign key(emp_id) references employee(emp_id));
+
+            insert into credits(emp_id,base_pay,allowance,balance_loan_amount,salary_increment)
+            values(1001,1000,500,40000,0);
+
+            insert into credits(emp_id,base_pay,allowance,balance_loan_amount,salary_increment)
+            values(1011,1200,700,45000,0);
+
+            insert into credits(emp_id,base_pay,allowance,balance_loan_amount,salary_increment)
+            values(1012,1200,600,0,0);
+
+```
+### Feature III: Detections details
+
+```sql
+            create table detections(
+            emp_id number not null,
+            food_detection number,
+            cab_detection number,
+            loan_detection number,
+            loss_of_pay number,
+            profident_fund number not null,
+            constraint empl_id_fk foreign key(emp_id) references employee(emp_id)
+            );
+
+            insert into detections(emp_id,food_detection,cab_detection,loan_detection,loss_of_pay,profident_fund)
+            values(1001,200,2000,1500,0,1000);
+
+            insert into detections(emp_id,food_detection,cab_detection,loan_detection,loss_of_pay,profident_fund)
+            values(1011,200,1000,1500,0,1000);
+
+            insert into detections(emp_id,food_detection,cab_detection,loan_detection,loss_of_pay,profident_fund)
+            values(1012,0,1000,1500,0,1000);
+
+```
+### Salary Calculation
+
+```sql 
+
+            create table salary (
+            emp_id number not null,
+            salary number ,
+            constraint emp_id_fk1 foreign key(emp_id) references employee(emp_id));
+
+            insert into salary(emp_id,salary)values(1001,0);
+
+            insert into salary(emp_id,salary)values(1011,0);
+
+            insert into salary(emp_id,salary)values(1012,0);
 ```
