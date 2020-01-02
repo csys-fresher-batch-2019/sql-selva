@@ -43,27 +43,34 @@
 
 ### Feature II: Credit Details
 
+| EMP_ID | ALLOWANCE | SALARY_INCREMENT |
+|:------:|:---------:|:----------------:|
+|  1001  |    500    |         0        |
+|  1011  |    700    |         0        |
+|  1012  |    600    |         0        |
+|  1023  |    500    |         0        |
+|  1112  |    300    |         0        |
+
+
 ```sql
 
             create table credits(
             emp_id number not null,
-            base_pay number not null,
             allowance number,
-            balance_loan_amount number,
             salary_increment number,
             constraint emp_id_fk foreign key(emp_id) references employee(emp_id));
 ```
 ```sql
-            insert into credits(emp_id,base_pay,allowance,balance_loan_amount,salary_increment)
-            values(1001,1000,500,40000,0);
+            insert into credits(emp_id,allowance,salary_increment)
+            values(1001,500,0);
 ```
 ```sql
-            insert into credits(emp_id,base_pay,allowance,balance_loan_amount,salary_increment)
-            values(1011,1200,700,45000,0);
+            insert into credits(emp_id,allowance,salary_increment)
+            values(1011,700,0);
 ```
 ```sql
-            insert into credits(emp_id,base_pay,allowance,balance_loan_amount,salary_increment)
-            values(1012,1200,600,0,0);
+            insert into credits(emp_id,allowance,salary_increment)
+            values(1012,600,0);
 ```
 ### Feature III: Detections details
 
