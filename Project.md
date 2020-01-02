@@ -131,3 +131,29 @@
 ```sql
             insert into biometrices(emp_id,login_time)values(1012,systimestamp);
 ```
+
+### Feature V : Salary Calculation
+
+| EMP_ID | FINAL_SALARY |
+|:------:|:------------:|
+|  1001  |       0      |
+|  1011  |       0      |
+|  1012  |       0      |
+|  1023  |       0      |
+|  1112  |       0      |
+
+```sql 
+            create table final_salary(
+            emp_id number not null,
+            salary_to_be_credited number,
+            constraint emp_id_key foreign key(emp_id) references employee(emp_id));
+```
+```sql
+            insert into final_salary(emp_id)values(1001);
+```
+```sql
+            insert into final_salary(emp_id)values(1011);
+```
+```sql
+            insert into final_salary(emp_id)values(1012);
+```
