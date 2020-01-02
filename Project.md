@@ -74,28 +74,35 @@
 ```
 ### Feature III: Detections details
 
+| EMP_ID | FOOD_DETECTION | CAB_DETECTION | LOSS_OF_PAY | PROVIDENT_FUND |
+|:------:|:--------------:|:-------------:|:-----------:|:--------------:|
+|  1001  |       200      |      2000     |      0      |      1000      |
+|  1011  |       200      |      1000     |      0      |      1000      |
+|  1012  |        0       |      1000     |      0      |      1000      |
+|  1023  |       200      |       0       |      0      |      1000      |
+|  1112  |        0       |       0       |      0      |      1000      |
+
 ```sql
             create table detections(
             emp_id number not null,
             food_detection number,
             cab_detection number,
-            loan_detection number,
             loss_of_pay number,
-            profident_fund number not null,
+            provident_fund number not null,
             constraint empl_id_fk foreign key(emp_id) references employee(emp_id)
             );
 ```
 ```sql
-            insert into detections(emp_id,food_detection,cab_detection,loan_detection,loss_of_pay,profident_fund)
-            values(1001,200,2000,1500,0,1000);
+            insert into detections(emp_id,food_detection,cab_detection,loss_of_pay,profident_fund)
+            values(1001,200,2000,0,1000);
+```
+```sql
+            insert into detections(emp_id,food_detection,cab_detection,loss_of_pay,profident_fund)
+            values(1011,200,1000,0,1000);
 ```
 ```sql
             insert into detections(emp_id,food_detection,cab_detection,loan_detection,loss_of_pay,profident_fund)
-            values(1011,200,1000,1500,0,1000);
-```
-```sql
-            insert into detections(emp_id,food_detection,cab_detection,loan_detection,loss_of_pay,profident_fund)
-            values(1012,0,1000,1500,0,1000);
+            values(1012,0,1000,0,1000);
 ```
 ### Feature IV: Salary Calculation
 
