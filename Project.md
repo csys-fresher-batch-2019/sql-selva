@@ -104,20 +104,30 @@
             insert into detections(emp_id,food_detection,cab_detection,loan_detection,loss_of_pay,profident_fund)
             values(1012,0,1000,0,1000);
 ```
-### Feature IV: Salary Calculation
+### Feature IV: Attendance Monitoring
+
+| EMP_ID |           LOGIN_TIME           | LOGOUT_TIME |
+|:------:|:------------------------------:|:-----------:|
+|  1001  | 02-01-20 05:42:26.921000000 PM |      0      |
+|  1011  | 02-01-20 05:42:26.921000000 PM |      0      |
+|  1012  | 02-01-20 05:42:26.921000000 PM |      0      |
+|  1023  | 02-01-20 05:42:26.921000000 PM |      0      |
+|  1112  | 02-01-20 05:42:26.921000000 PM |      0      |
+
 
 ```sql 
-            create table salary (
+            create table biometrices(
             emp_id number not null,
-            salary number ,
-            constraint emp_id_fk1 foreign key(emp_id) references employee(emp_id));
+            login_time timestamp,   
+            logout_time timestamp,
+            constraint emp_id_fkey foreign key(emp_id) references employee(emp_id));
 ```
 ```sql
-            insert into salary(emp_id,salary)values(1001,0);
+            insert into biometrices(emp_id,login_time)values(1001,systimestamp);
 ```
 ```sql
-            insert into salary(emp_id,salary)values(1011,0);
+            insert into biometrices(emp_id,login_time)values(1011,systimestamp);
 ```
 ```sql
-            insert into salary(emp_id,salary)values(1012,0);
+            insert into biometrices(emp_id,login_time)values(1012,systimestamp);
 ```
