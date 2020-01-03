@@ -3,14 +3,6 @@
 ## Features
 
 ### Feature I: Employee Details
-| EMP_ID | EMP_NAME |      DESIGNATION     | PERFORMANCE_GRADE | LEAVES_TAKEN | SALARY | TOTAL_LEAVES | FOOD | CAB_FACILITY |
-|:------:|:--------:|:--------------------:|:-----------------:|:------------:|:------:|:------------:|:----:|:------------:|
-|  1001  |  Aadhav  |          DBA         |         2         |       1      |  20000 |      11      |   Y  |       Y      |
-|  1011  |   Rahul  |    Project Manager   |         1         |       0      |  25000 |      12      |   Y  |       Y      |
-|  1012  |   Vani   |    Project Manager   |         3         |       1      |  25000 |      11      |   N  |       Y      |
-|  1023  |  Thomas  |      Team Leader     |         3         |       2      |  20000 |      10      |   Y  |       N      |
-|  1112  |   Raji   | Technical consultant |         1         |       0      |  15000 |      12      |   N  |       N      |
-
 
 ```sql
       CREATE TABLE employee(
@@ -25,7 +17,7 @@
       constraint emp_id_pk primary key(emp_id)
       );
 ```
-        
+
 ```sql
 
       insert into employee(emp_id,emp_name,designation,leaves_taken,performance_grade,salary,total_leaves)
@@ -40,16 +32,15 @@
       values(1012,'Vani','Project Manger',1,2,25000,11);
 
 ```
+| EMP_ID | EMP_NAME |      DESIGNATION     | PERFORMANCE_GRADE | LEAVES_TAKEN | SALARY | TOTAL_LEAVES | FOOD | CAB_FACILITY |
+|:------:|:--------:|:--------------------:|:-----------------:|:------------:|:------:|:------------:|:----:|:------------:|
+|  1001  |  Aadhav  |          DBA         |         2         |       1      |  20000 |      11      |   Y  |       Y      |
+|  1011  |   Rahul  |    Project Manager   |         1         |       0      |  25000 |      12      |   Y  |       Y      |
+|  1012  |   Vani   |    Project Manager   |         3         |       1      |  25000 |      11      |   N  |       Y      |
+|  1023  |  Thomas  |      Team Leader     |         3         |       2      |  20000 |      10      |   Y  |       N      |
+|  1112  |   Raji   | Technical consultant |         1         |       0      |  15000 |      12      |   N  |       N      |
 
 ### Feature II: Credit Details
-
-| EMP_ID | ALLOWANCE | SALARY_INCREMENT |
-|:------:|:---------:|:----------------:|
-|  1001  |    500    |         0        |
-|  1011  |    700    |         0        |
-|  1012  |    600    |         0        |
-|  1023  |    500    |         0        |
-|  1112  |    300    |         0        |
 
 
 ```sql
@@ -72,15 +63,16 @@
             insert into credits(emp_id,allowance,salary_increment)
             values(1012,600,0);
 ```
+| EMP_ID | ALLOWANCE | SALARY_INCREMENT |
+|:------:|:---------:|:----------------:|
+|  1001  |    500    |         0        |
+|  1011  |    700    |         0        |
+|  1012  |    600    |         0        |
+|  1023  |    500    |         0        |
+|  1112  |    300    |         0        |
+
 ### Feature III: Detections details
 
-| EMP_ID | FOOD_DETECTION | CAB_DETECTION | LOSS_OF_PAY | PROVIDENT_FUND |
-|:------:|:--------------:|:-------------:|:-----------:|:--------------:|
-|  1001  |       200      |      2000     |      0      |      1000      |
-|  1011  |       200      |      1000     |      0      |      1000      |
-|  1012  |        0       |      1000     |      0      |      1000      |
-|  1023  |       200      |       0       |      0      |      1000      |
-|  1112  |        0       |       0       |      0      |      1000      |
 
 ```sql
             create table detections(
@@ -104,15 +96,15 @@
             insert into detections(emp_id,food_detection,cab_detection,loan_detection,loss_of_pay,profident_fund)
             values(1012,0,1000,0,1000);
 ```
-### Feature IV: Attendance Monitoring
+| EMP_ID | FOOD_DETECTION | CAB_DETECTION | LOSS_OF_PAY | PROVIDENT_FUND |
+|:------:|:--------------:|:-------------:|:-----------:|:--------------:|
+|  1001  |       200      |      2000     |      0      |      1000      |
+|  1011  |       200      |      1000     |      0      |      1000      |
+|  1012  |        0       |      1000     |      0      |      1000      |
+|  1023  |       200      |       0       |      0      |      1000      |
+|  1112  |        0       |       0       |      0      |      1000      |
 
-| EMP_ID |           LOGIN_TIME           | LOGOUT_TIME |
-|:------:|:------------------------------:|:-----------:|
-|  1001  | 02-01-20 05:42:26.921000000 PM |      0      |
-|  1011  | 02-01-20 05:42:26.921000000 PM |      0      |
-|  1012  | 02-01-20 05:42:26.921000000 PM |      0      |
-|  1023  | 02-01-20 05:42:26.921000000 PM |      0      |
-|  1112  | 02-01-20 05:42:26.921000000 PM |      0      |
+### Feature IV: Attendance Monitoring
 
 
 ```sql 
@@ -131,16 +123,15 @@
 ```sql
             insert into biometrices(emp_id,login_time)values(1012,systimestamp);
 ```
+| EMP_ID |           LOGIN_TIME           | LOGOUT_TIME |
+|:------:|:------------------------------:|:-----------:|
+|  1001  | 02-01-20 05:42:26.921000000 PM |      0      |
+|  1011  | 02-01-20 05:42:26.921000000 PM |      0      |
+|  1012  | 02-01-20 05:42:26.921000000 PM |      0      |
+|  1023  | 02-01-20 05:42:26.921000000 PM |      0      |
+|  1112  | 02-01-20 05:42:26.921000000 PM |      0      |
 
 ### Feature V : Salary Calculation
-
-| EMP_ID | FINAL_SALARY |
-|:------:|:------------:|
-|  1001  |       0      |
-|  1011  |       0      |
-|  1012  |       0      |
-|  1023  |       0      |
-|  1112  |       0      |
 
 ```sql 
             create table final_salary(
@@ -157,26 +148,14 @@
 ```sql
             insert into final_salary(emp_id)values(1012);
 ```
-```sql
-            drop table final_salary;
+| EMP_ID | FINAL_SALARY |
+|:------:|:------------:|
+|  1001  |       0      |
+|  1011  |       0      |
+|  1012  |       0      |
+|  1023  |       0      |
+|  1112  |       0      |
 
-            create table final_salary(
-            emp_id number not null,
-            salary_to_be_credited number,
-            constraint emp_id_key foreign key(emp_id) references employee(emp_id));
-
-            insert into final_salary(emp_id)values(1001);
-
-            insert into final_salary(emp_id)values(1011);
-
-            insert into final_salary(emp_id)values(1012);
-
-            insert into final_salary(emp_id)values(1023);
-
-            insert into final_salary(emp_id)values(1112);
-
-            select * from final_salary;
-```
 ```sql
             create or replace procedure entry_gate(employee_id in number,swiping_count in number )
             as
@@ -195,6 +174,13 @@
                 entry_gate(1001,0);
                 end;
 
+| EMP_ID |           LOGIN_TIME           |         LOGOUT_TIME        |
+|:------:|:------------------------------:|:--------------------------:|
+|  1001  | 02-01-20 15:42:26.921000000 PM |03-01-20 10:44:02.183000000 |
+|  1011  | 02-01-20 15:42:26.921000000 PM |03-01-20 10:44:02.183000000 |
+|  1012  | 02-01-20 15:42:26.921000000 PM |03-01-20 10:44:02.183000000 |
+|  1023  | 02-01-20 15:42:26.921000000 PM |03-01-20 10:44:02.183000000 |
+|  1112  | 02-01-20 15:42:26.921000000 PM |03-01-20 10:44:02.183000000 |
 
 
             create or replace procedure attedance_check(employee_id in number )
@@ -212,11 +198,27 @@
                 begin 
                 attedance_check(1001);
                 end;
+| EMP_ID | EMP_NAME |      DESIGNATION     | PERFORMANCE_GRADE | LEAVES_TAKEN | SALARY | TOTAL_LEAVES | FOOD | CAB_FACILITY |
+|:------:|:--------:|:--------------------:|:-----------------:|:------------:|:------:|:------------:|:----:|:------------:|
+|  1001  |  Aadhav  |          DBA         |         2         |       1      |  20000 |      11      |   Y  |       Y      |
+|  1011  |   Rahul  |    Project Manager   |         1         |       0      |  25000 |      12      |   Y  |       Y      |
+|  1012  |   Vani   |    Project Manager   |         3         |       1      |  25000 |      11      |   N  |       Y      |
+|  1023  |  Thomas  |      Team Leader     |         3         |       2      |  20000 |      10      |   Y  |       N      |
+|  1112  |   Raji   | Technical consultant |         1         |       0      |  15000 |      12      |   N  |       N      |
+
+
 
 ```sql
             
       update detections d set food_detection = 200 where emp_id = (select emp_id from employee  where emp_id = d.emp_id and food = 'Y');
      ```
+| EMP_ID | FOOD_DETECTION | CAB_DETECTION | LOSS_OF_PAY | PROVIDENT_FUND |
+|:------:|:--------------:|:-------------:|:-----------:|:--------------:|
+|  1001  |       200      |      2000     |      0      |      1000      |
+|  1011  |       200      |      1000     |      0      |      1000      |
+|  1012  |        0       |      1000     |      0      |      1000      |
+|  1023  |       200      |       0       |      0      |      1000      |
+|  1112  |        0       |       0       |      0      |      1000      |
      
  ```sql
             update credits c 
@@ -229,6 +231,13 @@
             FROM credits  WHERE emp_id = d.emp_id)  
             where emp_id = (select emp_id from employee where emp_id = d.emp_id);
 ```
+| EMP_ID | FOOD_DETECTION | CAB_DETECTION | LOSS_OF_PAY | PROVIDENT_FUND |
+|:------:|:--------------:|:-------------:|:-----------:|:--------------:|
+|  1001  |       200      |      2000     |      0      |      1000      |
+|  1011  |       200      |      1000     |      0      |      1000      |
+|  1012  |        0       |      1000     |    500      |      1000      |
+|  1023  |       200      |       0       |      0      |      1000      |
+|  1112  |        0       |       0       |   1000      |      1000      |
 
 ```sql
             create or replace FUNCTION get_salary(in_person_id IN NUMBER) 
@@ -266,6 +275,21 @@
             update final_salary set salary_to_be_credited = (select get_salary(1112) from dual) where emp_id = 1112;
 
 ```
+| EMP_ID | FINAL_SALARY |
+|:------:|:------------:|
+|  1001  |   21300      |
+|  1011  |   25500      |
+|  1012  |   29100      |
+|  1023  |   24300      |
+|  1112  |   16300      |
 
 ```sql 
       select e.emp_id,e.emp_name,f.salary_to_be_credited from employee e,final_salary f where e.emp_id = f.emp_id;
+```
+| EMP_ID | EMP_NAME | FINAL_SALARY |
+|:------:|:--------:|:------------:|
+|  1001  |  Aadhav  |   21300      |
+|  1011  |   Rahul  |   25500      |
+|  1012  |   Vani   |   29100      |
+|  1023  |  Thomas  |   24300      |
+|  1112  |   Raji   |   16300      |
