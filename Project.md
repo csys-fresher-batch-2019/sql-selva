@@ -3,13 +3,13 @@
 ## Features
 
 ### Feature I: Employee Details
-| EMP_ID | EMP_NAME |      DESIGNATION     | PERFORMANCE_GRADE | LEAVES_TAKEN | SALARY | TOTAL_LEAVES |
-|:------:|:--------:|:--------------------:|:-----------------:|:------------:|:------:|:------------:|
-|  1001  |  Aadhav  |          DBA         |         2         |       1      |  20000 |      11      |
-|  1011  |   Rahul  |    Project Manager   |         1         |       0      |  25000 |      12      |
-|  1012  |   Vani   |    Project Manager   |         3         |       1      |  25000 |      11      |
-|  1023  |  Thomas  |      Team Leader     |         3         |       2      |  20000 |      10      |
-|  1112  |   Raji   | Technical consultant |         1         |       0      |  15000 |      12      |
+| EMP_ID | EMP_NAME |      DESIGNATION     | PERFORMANCE_GRADE | LEAVES_TAKEN | SALARY | TOTAL_LEAVES | FOOD | CAB_FACILITY |
+|:------:|:--------:|:--------------------:|:-----------------:|:------------:|:------:|:------------:|:----:|:------------:|
+|  1001  |  Aadhav  |          DBA         |         2         |       1      |  20000 |      11      |   Y  |       Y      |
+|  1011  |   Rahul  |    Project Manager   |         1         |       0      |  25000 |      12      |   Y  |       Y      |
+|  1012  |   Vani   |    Project Manager   |         3         |       1      |  25000 |      11      |   N  |       Y      |
+|  1023  |  Thomas  |      Team Leader     |         3         |       2      |  20000 |      10      |   Y  |       N      |
+|  1112  |   Raji   | Technical consultant |         1         |       0      |  15000 |      12      |   N  |       N      |
 
 
 ```sql
