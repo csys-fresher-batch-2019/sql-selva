@@ -1,44 +1,40 @@
 # Payroll Management system
 
 ## Features
-
-### Feature I: Employee Details
+```sql
+create sequence emp_id_seq start with 1000 increment by 1;
+```
 
 ```sql
       CREATE TABLE employee(
-      emp_id  number not null,
-      emp_name varchar2(50) not null,
-      designation varchar2(20) not null,
-      performance_grade number check(performance_grade > 0),
-      leaves_taken number,
-      salary number not null,
-      total_leaves number,
+emp_id  number not null,
+emp_name varchar2(50) not null,
+designation varchar2(50) not null,
+email varchar(50) unique,
+performance_grade number check(performance_grade > 0),
+leaves_taken number,
+basepay number,
+total_leaves number default 12,
+food_subscription char default 'N',
+cab_subscription char default 'N',
+Pan_number varchar2(10) unique,
 
-      constraint emp_id_pk primary key(emp_id)
-      );
+constraint emp_id_pk primary key(emp_id),
+constraint food_cq check(food_subscription in('Y','N')),
+constraint cab_cq check(cab_subscription in('Y','N'))
+);
+
 ```
 
 ```sql
 
-      insert into employee(emp_id,emp_name,designation,leaves_taken,performance_grade,salary,total_leaves)
-      values(1001,'Aadhav','DBA',1,2,20000,11);
+     insert into employee(emp_id,emp_name,designation,email,performance_grade,leaves_taken,basepay,total_leaves,food_subscription,cab_subscription,pan_number)
+values(emp_id_seq.nextval,'Selva','Admin','selvamanikandan.ks@gmail.com',2,0,20000,12,'N','Y','ABC14345')
  ```
-```sql
-      insert into employee(emp_id,emp_name,designation,leaves_taken,performance_grade,salary,total_leaves)
-      values(1011,'Rahul','Project Manger',0,2,25000,12);
-```
-```sql
-      insert into employee(emp_id,emp_name,designation,leaves_taken,performance_grade,salary,total_leaves)
-      values(1012,'Vani','Project Manger',1,2,25000,11);
 
-```
-| EMP_ID | EMP_NAME |      DESIGNATION     | PERFORMANCE_GRADE | LEAVES_TAKEN | SALARY | TOTAL_LEAVES | FOOD | CAB_FACILITY |
-|:------:|:--------:|:--------------------:|:-----------------:|:------------:|:------:|:------------:|:----:|:------------:|
-|  1001  |  Aadhav  |          DBA         |         2         |       1      |  20000 |      11      |   Y  |       Y      |
-|  1011  |   Rahul  |    Project Manager   |         1         |       0      |  25000 |      12      |   Y  |       Y      |
-|  1012  |   Vani   |    Project Manager   |         3         |       1      |  25000 |      11      |   N  |       Y      |
-|  1023  |  Thomas  |      Team Leader     |         3         |       2      |  20000 |      10      |   Y  |       N      |
-|  1112  |   Raji   | Technical consultant |         1         |       0      |  15000 |      12      |   N  |       N      |
+| EMP_ID | EMP_NAME | DESIGNATION | EMAIL                        | PERFORMANCE_GRADE | LEAVES-TAKEN | BASEPAY | TOTAL_LEAVES | FOOD_SUBSCRIPTION | CAB_SUBSCRIPTION | PAN_NUMBER |
+|--------|----------|-------------|------------------------------|-------------------|--------------|---------|--------------|-------------------|------------------|------------|
+| 1000   | Selva    | Admin       | selvamanikandan.ks@gmail.com | 2                 | 0            | 20000   | 12           | Y                 | N                | ABCD1234   |
 
 ### Feature II: Credit Details
 
@@ -298,3 +294,5 @@
 |  1012  |   Vani   |   29100      |
 |  1023  |  Thomas  |   24300      |
 |  1112  |   Raji   |   16300      | 
+
+
