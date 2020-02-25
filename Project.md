@@ -173,6 +173,7 @@
                 begin 
                 entry_gate(1001,0);
                 end;
+  ```
 
 | EMP_ID |           LOGIN_TIME           |         LOGOUT_TIME        |
 |:------:|:------------------------------:|:--------------------------:|
@@ -182,6 +183,7 @@
 |  1023  | 02-01-20 15:42:26.921000000 PM |03-01-20 10:44:02.183000000 |
 |  1112  | 02-01-20 15:42:26.921000000 PM |03-01-20 10:44:02.183000000 |
 
+```sql
 
             create or replace procedure attedance_check(employee_id in number )
             as
@@ -198,6 +200,9 @@
                 begin 
                 attedance_check(1001);
                 end;
+                
+  ```              
+                
 | EMP_ID | EMP_NAME |      DESIGNATION     | PERFORMANCE_GRADE | LEAVES_TAKEN | SALARY | TOTAL_LEAVES | FOOD | CAB_FACILITY |
 |:------:|:--------:|:--------------------:|:-----------------:|:------------:|:------:|:------------:|:----:|:------------:|
 |  1001  |  Aadhav  |          DBA         |         2         |       1      |  20000 |      11      |   Y  |       Y      |
